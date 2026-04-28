@@ -72,7 +72,7 @@ export default function EstimatePage() {
       {/* ── Estimator + Sidebar ── */}
       <section style={{ background: 'var(--bg)', padding: '0 0 80px' }}>
         <div className="container">
-          <div className="estimate-main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 40, alignItems: 'start', marginTop: -40 }}>
+          <div className="estimate-main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 40, alignItems: 'start', marginTop: 40 }}>
 
             {/* Estimator card */}
             <div className="estimate-card" style={{ background: 'white', borderRadius: 16, padding: '40px', boxShadow: '0 8px 48px rgba(0,0,0,0.1)', border: '1px solid var(--border)' }}>
@@ -105,7 +105,7 @@ export default function EstimatePage() {
                 <p style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 800, color: 'white', marginBottom: 6 }}>Want to talk directly?</p>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-body)', marginBottom: 16 }}>Call us for a free 15-minute consultation</p>
                 <a href="tel:+919876543210" style={{ display: 'block', background: 'white', color: 'var(--accent)', padding: '11px 20px', borderRadius: 8, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
-                  📞 +91 98765 43210
+                  📞 +91 78912 50008
                 </a>
               </div>
 
