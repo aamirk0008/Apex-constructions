@@ -80,7 +80,7 @@ export default function EstimatePage() {
             </div>
 
             {/* Sidebar */}
-            <div className="estimate-sidebar" style={{ display: 'flex', flexDirection: 'column', gap: 20, paddingTop: 40 }}>
+            <div className="estimate-sidebar" style={{ display: 'flex', flexDirection: 'column', gap: 20, paddingTop: 0 }}>
 
               {/* Why us */}
               <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: 24 }}>
