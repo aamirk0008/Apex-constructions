@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ContactForm from '../components/contact/ContactForm';
+import ContactForm from '../../components/contact/ContactForm';
 
 export const metadata = {
   title: 'Contact Us',
