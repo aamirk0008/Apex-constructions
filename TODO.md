@@ -1,1 +1,0 @@
-- [x] Update lib/mongodb.js with try-catch around mongoose.connect()\n- [x] Test the connection\n- [x] Mark complete and attempt_completion
