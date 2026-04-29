@@ -1,4 +1,4 @@
-import CostEstimator from '../../components/estimate/CostEstimator';
+import CostEstimator from '@/components/estimate/CostEstimator';
 
 export const metadata = {
   title: 'Free Construction Cost Estimator',

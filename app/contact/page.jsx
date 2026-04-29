@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ContactForm from '../../components/contact/ContactForm';
+import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata = {
   title: 'Contact Us',
@@ -26,7 +26,7 @@ const CONTACT_ITEMS = [
   {
     icon: '📧',
     label: 'Email',
-    value: 'hello@buildright.in',
+    value: 'aamirsheikh0008@gmail.com',
     sub: 'We reply within 4 hours',
     href: 'mailto:hello@buildright.in',
     color: '#5B6FA6',
