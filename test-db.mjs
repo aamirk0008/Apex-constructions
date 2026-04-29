@@ -1,8 +1,6 @@
 // test-db.mjs
 import mongoose from 'mongoose';
 
-const uri = 'mongodb+srv://aamirsheikh0008_db_user:AcfJDdmjRwrlmDbG@cluster0.c2ekhpp.mongodb.net/?appName=Cluster0'; // paste directly, no .env
-
 async function test() {
   try {
     console.log('Connecting...');
