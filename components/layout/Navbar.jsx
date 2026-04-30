@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Blog',     href: '/blog' },
-  { label: 'Cities',   href: '/cities/delhi' },
+  { label: 'Cities',   href: '/cities' },
 ];
 
 export default function Navbar() {
