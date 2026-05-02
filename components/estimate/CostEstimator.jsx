@@ -340,7 +340,7 @@ function ContactStep({ value, onChange }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         {[
           { key: 'name',  label: 'Full Name',     placeholder: 'Rajesh Sharma',    type: 'text',  required: true },
-          { key: 'phone', label: 'Phone Number',  placeholder: '+91 98765 43210',  type: 'tel',   required: true },
+          { key: 'phone', label: 'Phone Number',  placeholder: '+91 78912 50008',  type: 'tel',   required: true },
           { key: 'email', label: 'Email Address', placeholder: 'rajesh@email.com', type: 'email', required: false },
         ].map(({ key, label, placeholder, type, required }) => (
           <div key={key}>
@@ -429,7 +429,7 @@ function ResultScreen({ answers, onReset }) {
 
       {/* Action buttons */}
       <div style={{ display: 'flex', gap: 10, marginBottom: 12, flexWrap: 'wrap' }}>
-        <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '919876543210'}?text=${encodeURIComponent(`Hi, I used your Cost Estimator.\n\nProject: ${TYPE_LABELS[answers.type]}\nArea: ${answers.area.toLocaleString()} sq ft\nQuality: ${QUALITY_LABELS[answers.quality]}\nCity: ${CITY_LABELS[answers.city]}\nEstimate: ${fmt(est.mid)}\n\nI'd like a detailed quote.`)}`}
+        <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '917891250008'}?text=${encodeURIComponent(`Hi, I used your Cost Estimator.\n\nProject: ${TYPE_LABELS[answers.type]}\nArea: ${answers.area.toLocaleString()} sq ft\nQuality: ${QUALITY_LABELS[answers.quality]}\nCity: ${CITY_LABELS[answers.city]}\nEstimate: ${fmt(est.mid)}\n\nI'd like a detailed quote.`)}`}
           target="_blank" rel="noopener noreferrer"
           style={{ flex: 1, padding: '13px 16px', background: '#25D366', color: 'white', borderRadius: 8, fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
           💬 Share on WhatsApp

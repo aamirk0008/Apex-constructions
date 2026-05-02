@@ -127,7 +127,7 @@ export default function ContactForm() {
           <div>
             <label className="cf-label">Phone Number <span style={{ color: 'var(--accent)' }}>*</span></label>
             <input className={`cf-input${errors.phone ? ' error' : ''}`} type="tel"
-              placeholder="+91 98765 43210" value={form.phone}
+              placeholder="+91 78912 50008" value={form.phone}
               onChange={e => update('phone', e.target.value)} />
             {errors.phone && <p className="cf-error">{errors.phone}</p>}
           </div>

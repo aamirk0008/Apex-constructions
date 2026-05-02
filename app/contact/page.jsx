@@ -10,7 +10,7 @@ const CONTACT_ITEMS = [
   {
     icon: '📞',
     label: 'Call Us',
-    value: '+91 98765 43210',
+    value: '+91 78912 50008',
     sub: 'Mon–Sat, 9am–7pm IST',
     href: 'tel:+919876543210',
     color: '#4A7C59',
@@ -20,7 +20,7 @@ const CONTACT_ITEMS = [
     label: 'WhatsApp',
     value: 'Chat Instantly',
     sub: 'Typically replies in minutes',
-    href: `https://wa.me/919876543210?text=${encodeURIComponent('Hi, I\'d like to discuss a construction project.')}`,
+    href: `https://wa.me/917891250008?text=${encodeURIComponent('Hi, I\'d like to discuss a construction project.')}`,
     color: '#25D366',
   },
   {
@@ -28,7 +28,7 @@ const CONTACT_ITEMS = [
     label: 'Email',
     value: 'aamirsheikh0008@gmail.com',
     sub: 'We reply within 4 hours',
-    href: 'mailto:hello@buildright.in',
+    href: 'mailto:aamirsheikh0008@gmail.com',
     color: '#5B6FA6',
   },
   {
