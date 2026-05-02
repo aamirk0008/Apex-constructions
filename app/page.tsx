@@ -34,6 +34,13 @@ const SERVICES = [
     desc: 'Transform your existing property with structural upgrades, fresh interiors, and modern extensions.',
     href: '/services#renovation',
   },
+  {
+    icon: '📐',
+    title: '2D & 3D Design',
+    desc: 'Floor plans, photorealistic 3D exterior & interior renders, and architectural drawings. Standalone or free with construction.',
+    href: '/services/design',
+    highlight: true,
+  },
 ];
 
 const PROJECTS = [
@@ -68,9 +75,9 @@ export default function HomePage() {
         /* Service cards */
         .service-card {
           background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: 12px;
-          padding: 32px;
+          border: 1.5px solid var(--border);
+          border-radius: 14px;
+          padding: 28px;
           display: block;
           transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
           text-decoration: none;
@@ -79,6 +86,18 @@ export default function HomePage() {
           border-color: var(--accent);
           transform: translateY(-4px);
           box-shadow: 0 12px 40px rgba(200,137,26,0.12);
+        }
+        .service-card-highlight {
+          background: var(--ink) !important;
+          border-color: var(--accent) !important;
+          grid-column: 1 / -1;
+        }
+        .service-card-highlight:hover { box-shadow: 0 16px 48px rgba(200,137,26,0.3); transform: translateY(-4px); }
+        @media (max-width: 768px) {
+          .services-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .services-grid { grid-template-columns: 1fr !important; }
         }
 
         /* Project cards */
@@ -328,29 +347,73 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            {SERVICES.map(({ icon, title, desc, href }) => (
+          {/* Top 4 cards */}
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 20 }}>
+            {SERVICES.filter(s => !s.highlight).map(({ icon, title, desc, href }) => (
               <Link key={title} href={href} className="service-card">
                 <div style={{
-                  width: 52, height: 52, background: 'var(--accent-bg)',
+                  width: 48, height: 48, background: 'var(--accent-bg)',
                   border: '1px solid rgba(200,137,26,0.15)',
                   borderRadius: 8, display: 'flex', alignItems: 'center',
-                  justifyContent: 'center', fontSize: 22, marginBottom: 20,
+                  justifyContent: 'center', fontSize: 22, marginBottom: 18,
                 }}>
                   {icon}
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 10 }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 19, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>
                   {title}
                 </h3>
-                <p style={{ fontSize: 14, color: 'var(--ink-muted)', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 13, color: 'var(--ink-muted)', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>
                   {desc}
                 </p>
-                <p style={{ marginTop: 20, fontSize: 13, color: 'var(--accent)', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
+                <p style={{ marginTop: 18, fontSize: 13, color: 'var(--accent)', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                   Learn more →
                 </p>
               </Link>
             ))}
           </div>
+
+          {/* Design — full-width highlight card */}
+          {SERVICES.filter(s => s.highlight).map(({ icon, title, desc, href }) => (
+            <Link key={title} href={href} style={{
+              display: 'grid', gridTemplateColumns: '1fr auto',
+              alignItems: 'center', gap: 32,
+              background: 'var(--ink)', border: '1.5px solid var(--accent)',
+              borderRadius: 14, padding: '28px 36px', textDecoration: 'none',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+                <div style={{
+                  width: 56, height: 56, borderRadius: 10, flexShrink: 0,
+                  background: 'rgba(200,137,26,0.15)', border: '1px solid rgba(200,137,26,0.3)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26,
+                }}>
+                  {icon}
+                </div>
+                <div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(200,137,26,0.15)', border: '1px solid rgba(200,137,26,0.3)', borderRadius: 20, padding: '3px 10px', marginBottom: 8 }}>
+                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block' }} />
+                    <span style={{ fontSize: 11, color: 'var(--accent-light)', fontWeight: 700, fontFamily: 'var(--font-body)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>New Service</span>
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, color: 'white', marginBottom: 6 }}>
+                    {title}
+                  </h3>
+                  <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, fontFamily: 'var(--font-body)', maxWidth: 540 }}>
+                    {desc}
+                  </p>
+                </div>
+              </div>
+              <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-end' }}>
+                {['2D Floor Plans', '3D Exterior', '3D Interior', 'Arch. Drawings'].map(tag => (
+                  <span key={tag} style={{ fontSize: 12, padding: '4px 12px', borderRadius: 99, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                    ✓ {tag}
+                  </span>
+                ))}
+                <span style={{ marginTop: 4, fontSize: 14, color: 'var(--accent-light)', fontWeight: 700, fontFamily: 'var(--font-body)' }}>
+                  Explore →
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
