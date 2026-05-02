@@ -17,6 +17,7 @@ const NAV_LINKS = [
   },
   { label: 'Projects', href: '/projects' },
   { label: 'Cities',   href: '/cities' },
+  { label: 'Contact Us',   href: '/contact' },
 ];
 
 export default function Navbar() {
